@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/i18next@22.0.4/dist/umd/i18next.min.js"></script>
+</head>
+
+<body>
+    <div id="output"></div>
+    <button onclick="changeLang('en')">en</button>
+    <button onclick="changeLang('zh')">zh</button>
+    <script>
+        i18next.init({
+            lng: 'en', // if you're using a language detector, do not define the lng option
+            debug: true,
+            resources: {
+                en: {
+                    translation: {
+                        "HELLO": "hello"
+                    }
+                },
+                zh: {
+                    translation: {
+                        "HELLO": "你好"
+                    }
+                }
+            }
+        }).then(function (t) {
+            // initialized and ready to go!
+            document.getElementById('output').innerHTML = i18next.t('HELLO');
+        });
+
+        function changeLang(lng) {
+            i18next
+            .changeLanguage(lng)
+            .then(t => {
+                document.getElementById('output').innerHTML = t('HELLO');
+            });
+        }
+    </script>
+</body>
+</html>
