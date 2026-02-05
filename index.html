@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" type="text/css">
     <script src="https://unpkg.com/i18next@22.0.4/dist/umd/i18next.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/3.0.2/i18nextHttpBackend.min.js" integrity="sha512-RYgVA7vVuFPjAksuk9TPraxVuJvdB5sF3KkbHdPkh47Bw2/q4wfiO67yU/btAG6k8t6qg7bY0VRHddW0/JcEsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    <a href="https://github.com/dirkarnez/i18next-playground" target="_blank">dirkarnez/i18next-playground</a><br>
     <div id="output"></div>
     <button onclick="changeLang('en')">en</button>
     <button onclick="changeLang('zh')">zh</button>
@@ -19,8 +21,8 @@
         .init({
             lng: 'en', // if you're using a language detector, do not define the lng option
             debug: true,
-            ns: ['translation'],
-            defaultNS: 'translation',
+            ns: ['login-page'],
+            defaultNS: 'login-page',
             backend: {
                 loadPath: './locales/{{lng}}/{{ns}}.json'
             }
